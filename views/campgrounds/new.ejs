@@ -1,0 +1,48 @@
+<% layout('layouts/boilerplate.ejs') %> 
+<div class="row">
+    <h1 class="text-center">New Campground</h1>
+    <div class="col-6 mx-auto">
+        <form action="/campgrounds" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="campground[title]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" id="location" name="campground[location]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price">Price</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">$</span>
+                    <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price" aria-describedby="basic-addon1" name="campground[price]" required>
+                </div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" id="description" name="campground[description]" required></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="formFileMultiple" class="form-label">Add Image(s)...</label>
+                <input class="form-control custom-file-input" type="file" id="formFileMultiple" name="image" multiple>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Add Campground</button>
+            </div>
+        </form>
+        <a href="/campgrounds">All Campgrounds</a>
+    </div>
+</div>
